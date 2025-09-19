@@ -1,9 +1,13 @@
-const Book = () => {
+const Book = ({Title, Author}) => {
 
 
     //Javacript
     return ( 
-        <h1>BOeknaam 1</h1>
+        <section>
+        <h2>{Title}</h2>
+        <h3>{Author}</h3>
+        </section>
+
      );
 }
  
