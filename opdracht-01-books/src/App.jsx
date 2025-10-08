@@ -1,16 +1,18 @@
 import './App.css'
-import Book from './components/Book'
+import Header from "./components/Header";
+import Layout from "./components/Layout";
+import BookList from "./components/BookList";
 
 function App() {
-
   return (
     <>
-      <h1>Opdracht 1 - Books</h1>
-      <Book Title = "het leven van een loser" Author = "Ryan"/>
-      <Book Title = "boek 2" Author = "auteur 2"/>
-      <Book Title = "boek 3" Author = "auteur 3"/>
+      <Header />
+      <Layout>
+        <h1>Opdracht 1 - Books</h1>
+        <BookList/>
+      </Layout>
     </>
   )
 }
 
-export default App
+export default App;

@@ -1,14 +1,11 @@
-const Book = ({Title, Author}) => {
-
-
-    //Javacript
+const Book = ({Title, Author, Img}) => {
     return ( 
-        <section>
-        <h2>{Title}</h2>
-        <h3>{Author}</h3>
+        <section className="book-card">
+            <img src={Img} alt={Title} />
+            <h2>{Title}</h2>
+            <p>{Author}</p>
         </section>
-
-     );
+    );
 }
  
-export default Book ;
+export default Book;
