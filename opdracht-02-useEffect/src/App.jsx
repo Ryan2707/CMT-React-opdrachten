@@ -1,12 +1,16 @@
 import './App.css'
+import Clock from "./components/Clock"; // importeer de Clock-component
 
 function App() {
-
   return (
-    <>
-      <h1>Opdracht 2 - UseEffect</h1>
-    </>
-  )
+    <div className="App">
+      <h1>Mijn Klok App</h1>
+      <Clock /> {}
+    </div>
+  );
 }
 
-export default App
+export default App;
+
+
+
