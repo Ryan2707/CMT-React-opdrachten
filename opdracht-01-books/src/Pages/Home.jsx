@@ -1,18 +1,15 @@
-import './App.css'
-import Header from "./components/Header";
-import Layout from "./components/Layout";
-import BookList from "./components/BookList";
+import '../App.css';
+import Layout from "../components/Layout";
+import BookList from "../components/BookList";
+import React from 'react';
 
-function App() {
+const Home = () => {
   return (
-    <>
-      <Header />
-      <Layout>
-        <h1>Opdracht 1 - Books</h1>
-        <BookList/>
-      </Layout>
-    </>
-  )
-}
+    <Layout>
+      <h1>Opdracht 1 - Books</h1>
+      <BookList />
+    </Layout>
+  );
+};
 
-export default App;
+export default Home;

@@ -1,10 +1,7 @@
+import React from 'react';
+
 const NoPage = () => {
-  return (
-    <div>
-      <h1>404 - Pagina niet gevonden</h1>
-      <p>Sorry, de pagina die je zoekt bestaat niet.</p>
-    </div>
-  );
+  return <h1>404, page not found</h1>;
 };
 
 export default NoPage;
