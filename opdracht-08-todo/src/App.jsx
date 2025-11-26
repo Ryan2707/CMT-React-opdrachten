@@ -1,12 +1,23 @@
-import './App.css'
+import { useState } from "react";
+import TodoForm from "./components/TodoForm.jsx";
+import TodoList from "./components/TodoList.jsx";
 
-function App() {
+export default function App() {
+  // todos is een array van objecten: { id: number, text: string }
+  const [todos, setTodos] = useState([]);
+
+  function addTodo(text) {
+    const trimmed = text.trim();
+    if (trimmed === "") return;
+    const newTodo = { id: Date.now(), text: trimmed };
+    setTodos((prev) => [...prev, newTodo]);
+  }
 
   return (
-    <>
-      <h1>Opdracht 8 - To Do</h1>
-    </>
-  )
+    <div style={{ padding: 20 }}>
+      <h1>Simple To-Do</h1>
+      <TodoForm onAdd={addTodo} />
+      <TodoList todos={todos} />
+    </div>
+  );
 }
-
-export default App
