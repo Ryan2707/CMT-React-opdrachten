@@ -1,11 +1,12 @@
-const Book = ({Title, Author, Img}) => {
-    return ( 
-        <section className="book-card">
-            <img src={Img} alt={Title} />
-            <h2>{Title}</h2>
-            <p>{Author}</p>
-        </section>
-    );
-}
- 
+import { useState } from "react";
+const Book = ({ img, title, author}) => {
+
+  return (
+    <section className="book-container">
+      <img className="image" src={img} alt={title} />
+      <h2>{title}</h2>
+      <h3>{author}</h3>
+    </section>
+  );
+};
 export default Book;
