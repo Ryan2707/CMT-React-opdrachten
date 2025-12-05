@@ -1,9 +1,0 @@
-.page {
-	padding: 20px;
-}
-.card-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
-	align-items: flex-start;
-}
