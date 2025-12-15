@@ -1,22 +1,25 @@
+import { useState } from 'react';
 
-const AddMovie = ({ onAdd })  => {
+const AddMovie = ({ onAdd }) => {
   const [movie, setMovie] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (movie === '') {
+
+    const trimmedMovie = movie.trim();
+
+    if (trimmedMovie === '') {
       alert('Movie name cannot be empty');
       return;
     }
-    onAdd(movie); 
- 
-  };
 
-  setMovie(''); 
+    onAdd(trimmedMovie);
+    setMovie(''); // input leegmaken na toevoegen
+  };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
+      <input
         type="text"
         value={movie}
         onChange={(e) => setMovie(e.target.value)}
@@ -25,6 +28,6 @@ const AddMovie = ({ onAdd })  => {
       <button type="submit">Add Movie</button>
     </form>
   );
-}
+};
 
 export default AddMovie;
