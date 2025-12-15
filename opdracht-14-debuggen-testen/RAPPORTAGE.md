@@ -3,14 +3,6 @@
 ## 📌 Project
 Favorite Movies List (React)
 
-## 📅 Datum
-[Zet hier je datum]
-
-## 👤 Naam
-[Zet hier je naam]
-
----
-
 ## 🐞 Bug Fixes
 
 ### Bug 1: useState is not defined
