@@ -14,14 +14,14 @@ const BookList = () => {
 
   const [books, setBooks] = useState(Data);
   const [searchInput, setSearchInput] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Alle"); // FIX
+  const [selectedCategory, setSelectedCategory] = useState("Alle");
 
   const filterHandler = (e) => {
     const category = e.target.value;
     setSelectedCategory(category);
 
     if (category === "Alle") {
-      setBooks(Data); // FIX
+      setBooks(Data);
     } else {
       const filteredBooks = Data.filter(
         (book) => book.category === category
@@ -31,7 +31,7 @@ const BookList = () => {
   };
 
   const SearchHandler = (e) => {
-    let newSearch = e.target.value;
+    const newSearch = e.target.value;
     setSearchInput(newSearch);
 
     const filteredBooks = Data.filter((book) =>
@@ -67,12 +67,14 @@ const BookList = () => {
       <section className="booklist">
         {books.map((book) => (
           <Book
-            key={book.id || book.title} // aanbevolen
-            img={book.image}
+            key={book.title}
+            image={book.image}
             title={book.title}
-            category={book.category}
             author={book.author}
-            btn={book.Btn}
+            category={book.category}
+            description={book.description}
+            year={book.year}
+            pages={book.pages}
           />
         ))}
       </section>
