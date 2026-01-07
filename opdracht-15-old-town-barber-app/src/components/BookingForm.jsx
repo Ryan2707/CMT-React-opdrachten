@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { getAppointments, setAppointments } from "../utils/localStorage";
+import {
+  getAppointments,
+  setAppointments as setAppointmentsLS
+} from "../utils/localStorage";
 
 const services = [
   { id: 1, name: "Knipbeurt", price: 25 },
@@ -17,7 +20,8 @@ const times = [
   "17:00", "17:30"
 ];
 
-const BookingForm = () => {
+
+const BookingForm = ({ setAppointments }) => {
   const [formData, setFormData] = useState({
     serviceId: "",
     date: "",
@@ -47,8 +51,18 @@ const BookingForm = () => {
       time
     };
 
+
     const existingAppointments = getAppointments();
-    setAppointments([...existingAppointments, newAppointment]);
+    const updatedAppointments = [
+      ...existingAppointments,
+      newAppointment
+    ];
+
+
+    setAppointments(updatedAppointments);
+
+
+    setAppointmentsLS(updatedAppointments);
 
     toast.success("Afspraak geboekt 🎉");
 
@@ -61,7 +75,9 @@ const BookingForm = () => {
 
   return (
     <div className="bg-white p-6 rounded shadow">
-      <h2 className="text-xl font-semibold mb-4">Boek een afspraak</h2>
+      <h2 className="text-xl font-semibold mb-4">
+        Boek een afspraak
+      </h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* SERVICE */}

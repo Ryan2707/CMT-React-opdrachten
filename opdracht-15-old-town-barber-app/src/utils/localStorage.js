@@ -8,11 +8,7 @@ export const getUserProfile = () => {
 };
 
 export const setUserProfile = (profile) => {
-  try {
     localStorage.setItem("userProfile", JSON.stringify(profile));
-  } catch {
-    console.error("Failed to save user profile");
-  }
 };
 
 
